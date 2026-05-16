@@ -6,6 +6,7 @@ import {
   Film,
   Sparkles,
   Sun,
+  Trees,
   Heart,
   RatioIcon,
   Clock,
@@ -84,7 +85,7 @@ const presets = [
     description: "Organic landscapes, golden hour warmth",
     preview: "from-emerald-950/35 via-stone-800/70 to-stone-950/95",
     accentColor: "bg-emerald-950/50 ring-1 ring-emerald-900/25",
-    icon: Sun,
+    icon: Trees,
   },
   {
     id: "noir-thriller",
@@ -1106,7 +1107,7 @@ export function VideoPromptDashboard() {
             {/* Look Library */}
             <section className="space-y-6">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
+                <p className="font-mono text-[10px] uppercase tracking-[0.34em] text-accent/75">
                   Look Library
                 </p>
                 <h2 className="mt-1.5 text-lg font-semibold tracking-tight">Cinematic starting points</h2>
