@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparell T-Shirt | Solusi T-Shirt Modern & Dinamis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Variabel CSS */
+        :root {
+            --primary-color: #007bff; /* Biru Cerah Dominan */
+            --secondary-color: #0056b3; /* Biru Gelap untuk Hover/Aksen */
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --max-width: 1200px;
+            --font-main: 'Poppins', sans-serif;
+            --border-radius: 8px;
+        }
+
+        /* Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 15px; /* Padding untuk responsif */
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+            color: var(--dark-color);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Buttons (CTA) */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            box-shadow: 0 6px 15px rgba(0, 86, 179, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- Header & Navigasi --- */
+        #header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        #hero p {
+            font-size: 1.25em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Fitur Inti Section --- */
+        #fitur {
+            background-color: var(--light-color);
+        }
+
+        .fitur-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .fitur-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .fitur-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
+        }
+
+        .fitur-card i {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .fitur-card h3 {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* --- Manfaat/Keunggulan Section --- */
+        #manfaat {
+            background-color: white;
+        }
+
+        .manfaat-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .manfaat-text {
+            flex: 1;
+        }
+
+        .manfaat-list li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .manfaat-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-weight: 800;
+        }
+
+        .manfaat-image {
+            flex: 1;
+            text-align: center;
+            /* Placeholder for a visual element */
+        }
+
+        .manfaat-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Tabel Harga --- */
+        #harga {
+            background-color: var(--light-color);
+        }
+
+        .harga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .harga-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .harga-card:hover {
+             transform: translateY(-5px);
+        }
+
+        .highlight-card {
+            border: 2px solid var(--primary-color);
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+        }
+
+        .highlight-card .harga-title, .highlight-card .harga-price {
+            color: white;
+        }
+
+        .highlight-card .btn-secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border-color: white;
+        }
+
+        .highlight-card .btn-secondary:hover {
+            background-color: var(--light-color);
+        }
+
+        .harga-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .harga-price {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .harga-price span {
+            font-size: 0.5em;
+            font-weight: 400;
+        }
+
+        .harga-desc {
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .harga-features li {
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: inherit; /* Inherit color from card */
+        }
+
+        .highlight-card .harga-features li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 5px;
+        }
+        .harga-features li {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 5px;
+        }
+
+        /* --- Footer --- */
+        #footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 40px 0 20px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            margin-bottom: 30px;
+            min-width: 250px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-section a, .footer-section p {
+            color: #ccc;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            margin-top: 20px;
+        }
+        /* CHAT BUBBLE */
+#chatBubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #007bff;
+    color: white;
+    font-size: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    z-index: 9999;
+}
+
+#chatBubble:hover {
+    transform: scale(1.1);
+}
+
+/* CHAT WINDOW */
+#chatWindow {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    z-index: 9998;
+}
+
+/* Saat terbuka */
+#chatWindow.open {
+    width: 320px;
+    height: 420px;
+    opacity: 1;
+}
+
+/* HEADER */
+#chatHeader {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 12px 12px 0 0;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#closeChat {
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* CHAT BOX */
+#chatBox {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+/* INPUT AREA */
+#chatInputArea {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+#chatInputArea button {
+    width: 100px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+        /* --- Responsif (Media Queries) --- */
+
+        /* Tablet dan Mobile (Lebar kurang dari 992px) */
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                padding: 10px 20px;
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            #hero h1 {
+                font-size: 2.5em;
+            }
+
+            #hero p {
+                font-size: 1.1em;
+            }
+
+            .manfaat-content {
+                flex-direction: column;
+            }
+
+            .fitur-grid, .harga-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+                min-width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Bubble Chatbot -->
+<div id="chatBubble">
+    🤖
+</div>
+
+<!-- Chat Window -->
+<div id="chatWindow">
+    <div id="chatHeader">
+        Chatbot AI
+        <span id="closeChat">×</span>
+    </div>
+
+    <div id="chatBox"></div>
+
+    <div id="chatInputArea">
+        <input type="text" id="chatInput" placeholder="Ketik pesan..." />
+        <button onclick="sendMessage()">Kirim</button>
+    </div>
+</div>
+
+    <header id="header">
+        <div class="container navbar">
+            <div class="logo">D' APPARELL</div>
+            <nav>
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#fitur">Fitur</a></li>
+                    <li><a href="#manfaat">Keunggulan</a></li>
+                    <li><a href="#harga">Harga</a></li>
+                    <li><a href="#footer">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="toggleButton">
+                &#9776; </div>
+        </div>
+    </header>
+    ---
+    <section id="hero">
+        <div class="container">
+            <h1>T-Shirt Interaktif, Konversi Maksimal.</h1>
+            <p>Tingkatkan engagement pelanggan dan penjualan T-Shirt Anda hingga 300% dengan T-Shirt Apparell yang <b>Dinamis, Modern, dan Terpercaya</b>.</p>
+            <div class="cta-group">
+                <a href="#harga" class="btn btn-primary">Pilih Paket Sekarang</a>
+                <a href="#manfaat" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+    ---
+    <section id="fitur">
+        <div class="container">
+            <h2 class="text-center">Fitur Inti T-Shirt Apparell</h2>
+            <p class="text-center" style="margin-bottom: 50px;">Setiap T-Shirt dirancang dengan fitur inovatif yang revolusioner.</p>
+            <div class="fitur-grid">
+                <div class="fitur-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Desain Otomatis</h3>
+                    <p>Sistem kami dapat memberikan rekomendasi desain T-Shirt yang sesuai dengan tren terbaru secara otomatis.</p>
+                </div>
+                <div class="fitur-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Bahan Universal</h3>
+                    <p>Menggunakan bahan katun premium yang cocok di segala cuaca dan nyaman untuk berbagai aktivitas.</p>
+                </div>
+                <div class="fitur-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Garansi Kualitas</h3>
+                    <p>Kami menjamin kualitas jahitan dan sablon terbaik, didukung garansi tukar produk 24/7.</p>
+                </div>
+                <div class="fitur-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Dinamika Warna</h3>
+                    <p>Pilihan warna yang selalu diperbarui berdasarkan analitik tren pasar, memastikan Anda selalu tampil modern.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    ---
+    <section id="manfaat">
+        <div class="container">
+            <h2 class="text-center">Keunggulan Kami: Mengapa Apparell?</h2>
+            <div class="manfaat-content">
+                <div class="manfaat-text">
+                    <p style="font-size: 1.2em; margin-bottom: 30px;">Tingkatkan pengalaman berpakaian Anda dan percepat penampilan modern dengan T-Shirt Apparell. Kami fokus pada kualitas dan inovasi.</p>
+                    <ul class="manfaat-list">
+                        <li><b>Meningkatkan Pengalaman Pelanggan:</b> Rasa percaya diri maksimal dan kenyamanan sepanjang hari.</li>
+                        <li><b>Mempercepat Konversi Penjualan:</b> Desain <b>eye-catching</b> yang menarik perhatian, memicu keinginan untuk membeli.</li>
+                        <li><b>Struktur Kuat & Profesional:</b> Kualitas bahan premium yang tahan lama, membuat penampilan selalu prima.</li>
+                        <li><b>Dukungan Penuh Tren:</b> Selalu up-to-date dengan tren fashion terkini.</li>
+                    </ul>
+                </div>
+                <div class="manfaat-image">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    ---
+    <section id="harga">
+        <div class="container">
+            <h2 class="text-center">Paket Harga T-Shirt Apparell</h2>
+            <p class="text-center" style="margin-bottom: 50px;">Pilih paket yang paling sesuai dengan kebutuhan gaya harian Anda.</p>
+            <div class="harga-grid">
+                <div class="harga-card">
+                    <h3 class="harga-title">Starter</h3>
+                    <p class="harga-desc">Awal yang sempurna untuk gaya dasar.</p>
+                    <p class="harga-price">Rp 120<span>K/pcs</span></p>
+                    <ul class="harga-features">
+                        <li>Bahan Katun Standar</li>
+                        <li>1 Pilihan Warna Dasar</li>
+                        <li>Garansi Tukar 7 Hari</li>
+                        <li>Tidak Termasuk Custom Desain</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" style="margin-top: 20px;">Pilih Paket</a>
+                </div>
+
+                <div class="harga-card highlight-card">
+                    <h3 class="harga-title">Bisnis</h3>
+                    <p class="harga-desc">Pilihan terbaik dan paling populer!</p>
+                    <p class="harga-price">Rp 199<span>K/pcs</span></p>
+                    <ul class="harga-features">
+                        <li>Bahan Katun Premium (Combed 30s)</li>
+                        <li>Akses Semua Pilihan Warna</li>
+                        <li>Garansi Kualitas 1 Bulan</li>
+                        <li>Termasuk Custom Desain (Sablon DTG)</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary" style="margin-top: 20px;">Pilih Paket</a>
+                </div>
+
+                <div class="harga-card">
+                    <h3 class="harga-title">Enterprise</h3>
+                    <p class="harga-desc">Solusi untuk kebutuhan perusahaan/massal.</p>
+                    <p class="harga-price">Hubungi Kami</p>
+                    <ul class="harga-features">
+                        <li>Bahan Katun Premium Eksklusif</li>
+                        <li>Custom Warna dan Ukuran Penuh</li>
+                        <li>Garansi Kualitas 6 Bulan</li>
+                        <li>Layanan Desain Eksklusif Tim Kami</li>
+                    </ul>
+                    <a href="#footer" class="btn btn-primary" style="margin-top: 20px;">Kontak Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    ---
+    <footer id="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>APPARELL T-Shirt</h4>
+                <p>Menciptakan T-Shirt bukan sekadar pakaian, tetapi gaya hidup. Kualitas premium, desain modern, dan kepercayaan adalah janji kami.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Navigasi</h4>
+                <a href="#fitur">Fitur Utama</a>
+                <a href="#harga">Tabel Harga</a>
+                <a href="#manfaat">Keunggulan</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Kontak Kami</h4>
+                <p>Nama Kontak: <b>Darrell Dewangga</b></p>
+                <p>Email: <a href="mailto:dewangga@gmail.com" style="display: inline-block;">dewangga@gmail.com</a></p>
+                <p>Telepon: <a href="tel:081234567" style="display: inline-block;">081234567</a></p>
+                <p>Layanan: Jakarta & Sekitarnya</p>
+                <p>Lokasi (Koordinat): -6.35418971352047, 106.83314394289417</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=-6.35418971352047,106.83314394289417" target="_blank" style="font-weight: 600;">Lihat di Peta</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 Apparell T-Shirt. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        });
+
+        // Menutup menu saat link di-klik pada mode mobile
+        document.querySelectorAll('.nav-links a').forEach(item => {
+            item.addEventListener('click', () => {
+                var navMenu = document.getElementById('navMenu');
+                if (window.innerWidth <= 991 && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+<script>
+const API_KEY = "AIzaSyBLlkZSDfmbaJcBbtQkcfFrhKW2LznUY7I";
+const MODEL_NAME = "gemini-2.0-flash-exp";
+
+const bubble = document.getElementById("chatBubble");
+const chatWindow = document.getElementById("chatWindow");
+const closeBtn = document.getElementById("closeChat");
+
+// Buka chat
+bubble.onclick = () => {
+    chatWindow.classList.add("open");
+    bubble.style.display = "none";
+};
+
+// Tutup chat
+closeBtn.onclick = () => {
+    chatWindow.classList.remove("open");
+
+    setTimeout(() => {
+        bubble.style.display = "flex";
+    }, 300);
+};
+
+async function sendMessage() {
+    let input = document.getElementById("chatInput");
+    let chatBox = document.getElementById("chatBox");
+
+    let userMsg = input.value.trim();
+    if (!userMsg) return;
+
+    chatBox.innerHTML += `<div><b>Anda:</b> ${userMsg}</div>`;
+    input.value = "";
+
+    const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`,
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                contents: [
+                    {
+                        parts: [{ text: userMsg }]
+                    }
+                ]
+            })
+        }
+    );
+
+    const data = await response.json();
+    let botMessage =
+        data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+        "Maaf, saya tidak dapat memproses permintaan.";
+
+    chatBox.innerHTML += `<div><b>Bot:</b> ${botMessage}</div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+</script>
+
+
+</body>
+</html>
