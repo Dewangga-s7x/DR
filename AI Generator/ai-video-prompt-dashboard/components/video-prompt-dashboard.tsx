@@ -521,7 +521,8 @@ export function VideoPromptDashboard() {
 
   const applyPreset = (presetId: string) => {
     setActivePreset(presetId)
-    const presetSelections: Record<string, string[]> = {
+
+    const presetSelections: Record<string, Record<string, string[]>> = {
       "cinematic-drama": {
         "project-type": ["short-film"],
         "visual-style": ["cinematic"],
@@ -532,6 +533,7 @@ export function VideoPromptDashboard() {
         duration: ["30s"],
         "audio-mood": ["orchestral"],
       },
+
       "sci-fi-epic": {
         "project-type": ["trailer"],
         "visual-style": ["futuristic"],
@@ -542,6 +544,7 @@ export function VideoPromptDashboard() {
         duration: ["15s"],
         "audio-mood": ["electronic"],
       },
+
       "nature-doc": {
         "project-type": ["documentary"],
         "visual-style": ["documentary"],
@@ -552,6 +555,7 @@ export function VideoPromptDashboard() {
         duration: ["60s"],
         "audio-mood": ["nature-sounds"],
       },
+
       "noir-thriller": {
         "project-type": ["short-film"],
         "visual-style": ["noir"],
@@ -562,7 +566,8 @@ export function VideoPromptDashboard() {
         duration: ["30s"],
         "audio-mood": ["jazz"],
       },
-    }
+    } 
+
     setSelections(presetSelections[presetId] || {})
   }
 
